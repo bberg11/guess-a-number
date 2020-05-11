@@ -12,8 +12,8 @@ const fetchFonts = () => {
   return Font.loadAsync({
     'open-sans': require('./assets/fonts/OpenSans-Regular.ttf'),
     'open-sans-bold': require('./assets/fonts/OpenSans-Bold.ttf')
-  })
-}
+  });
+};
 
 export default function App() {
   const [userNumber, setUserNumber] = useState();
@@ -22,10 +22,10 @@ export default function App() {
 
   if (!dataLoaded) {
     return (
-      <AppLoading 
+      <AppLoading
         startAsync={fetchFonts}
         onFinish={() => setDataLoaded(true)}
-        onError={(error) => console.log(error)} 
+        onError={err => console.log(err)}
       />
     );
   }
